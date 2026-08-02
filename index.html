@@ -18,13 +18,13 @@
 <meta property="og:description" content="A beginner web developer's portfolio — real projects, honest progress, no fluff.">
 <meta property="og:url" content="https://sopar-sinurat.vercel.app/">
 <meta property="og:site_name" content="Sopar Sinurat">
-<meta property="og:image" content="https://sopar-sinurat.vercel.app/og-image.png">
+<meta property="og:image" content="https://i.ibb.co.com/7NdsR1ts/FB-IMG-1785641644096.jpg">
 
 <!-- ===================== SEO: TWITTER CARD ===================== -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sopar Sinurat — Web Developer">
 <meta name="twitter:description" content="A beginner web developer's portfolio — real projects, honest progress, no fluff.">
-<meta name="twitter:image" content="https://sopar-sinurat.vercel.app/og-image.png">
+<meta name="twitter:image" content="https://i.ibb.co.com/7NdsR1ts/FB-IMG-1785641644096.jpg">
 
 <!-- ===================== SEO: SITEMAP ===================== -->
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -38,6 +38,7 @@
   "jobTitle": "Web Developer",
   "description": "Beginner web developer learning HTML, CSS and JavaScript through personal projects.",
   "url": "https://sopar-sinurat.vercel.app/",
+  "image": "https://i.ibb.co.com/7NdsR1ts/FB-IMG-1785641644096.jpg",
   "sameAs": ["https://github.com/ssinuratxx-wq"],
   "email": "soparsinurat12@gmail.com",
   "knowsAbout": ["HTML5", "CSS3", "JavaScript", "Responsive Web Design", "Git", "GitHub"]
@@ -328,18 +329,33 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:600; letter-spacing:-0.01
 .hero-meta li{ display:flex; align-items:center; gap:8px; }
 .hero-meta b{ color:var(--text-muted); font-weight:500; }
 
-/* Abstract illustration (pure SVG, no external image) */
-.hero-art{ animation:fadeIn 1s ease 0.2s both; }
+/* Profile photo frame */
+.hero-art{ animation:fadeIn 1s ease 0.2s both; display:flex; justify-content:center; }
 @keyframes fadeIn{ from{ opacity:0; transform:scale(0.96); } to{ opacity:1; transform:scale(1); } }
-.hero-art svg{ width:100%; height:auto; }
-.node{ animation:pulse 3s ease-in-out infinite; }
-.node.n2{ animation-delay:0.4s; }
-.node.n3{ animation-delay:0.8s; }
-.node.n4{ animation-delay:1.2s; }
-.node.n5{ animation-delay:1.6s; }
-@keyframes pulse{
-  0%,100%{ opacity:0.55; r:4; }
-  50%{ opacity:1; r:5.5; }
+.photo-frame{
+  position:relative;
+  width:100%;
+  max-width:340px;
+  aspect-ratio:1/1;
+  border-radius:32px;
+  padding:4px;
+  background:linear-gradient(160deg, rgba(59,130,246,0.5), rgba(52,211,153,0.25));
+}
+.photo-frame::after{
+  content:"";
+  position:absolute;
+  inset:-18px;
+  border:1px solid var(--border);
+  border-radius:40px;
+  z-index:-1;
+}
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:28px;
+  display:block;
+  background:var(--bg-elev);
 }
 
 /* =========================================================
@@ -626,27 +642,11 @@ footer .copyright{
         </ul>
       </div>
 
-      <!-- Abstract illustration: hand-built SVG node network, no stock image -->
-      <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="200" y1="90" x2="120" y2="200" stroke="#3B82F6" stroke-opacity="0.35"/>
-          <line x1="200" y1="90" x2="280" y2="200" stroke="#3B82F6" stroke-opacity="0.35"/>
-          <line x1="120" y1="200" x2="280" y2="200" stroke="#3B82F6" stroke-opacity="0.25"/>
-          <line x1="120" y1="200" x2="90" y2="320" stroke="#3B82F6" stroke-opacity="0.25"/>
-          <line x1="280" y1="200" x2="310" y2="320" stroke="#3B82F6" stroke-opacity="0.25"/>
-          <line x1="90" y1="320" x2="310" y2="320" stroke="#3B82F6" stroke-opacity="0.15"/>
-          <line x1="120" y1="200" x2="200" y2="320" stroke="#3B82F6" stroke-opacity="0.15"/>
-          <line x1="280" y1="200" x2="200" y2="320" stroke="#3B82F6" stroke-opacity="0.15"/>
-          <line x1="90" y1="320" x2="200" y2="320" stroke="#3B82F6" stroke-opacity="0.15"/>
-          <line x1="310" y1="320" x2="200" y2="320" stroke="#3B82F6" stroke-opacity="0.15"/>
-
-          <circle class="node n1" cx="200" cy="90" r="5" fill="#3B82F6"/>
-          <circle class="node n2" cx="120" cy="200" r="4.5" fill="#3B82F6"/>
-          <circle class="node n3" cx="280" cy="200" r="4.5" fill="#3B82F6"/>
-          <circle class="node n4" cx="90" cy="320" r="4" fill="#34D399"/>
-          <circle class="node n5" cx="310" cy="320" r="4" fill="#34D399"/>
-          <circle class="node n2" cx="200" cy="320" r="5.5" fill="#3B82F6"/>
-        </svg>
+      <!-- Profile photo -->
+      <div class="hero-art">
+        <div class="photo-frame">
+          <img src="https://i.ibb.co.com/7NdsR1ts/FB-IMG-1785641644096.jpg" alt="Sopar Sinurat, Web Developer" width="400" height="400" loading="eager">
+        </div>
       </div>
     </div>
   </section>
