@@ -434,10 +434,9 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:600; letter-spacing:-0.01
    ========================================================= */
 .projects-grid{
   display:grid;
-  grid-template-columns:1.4fr 1fr;
+  grid-template-columns:1fr;
   gap:24px;
 }
-@media (max-width:860px){ .projects-grid{ grid-template-columns:1fr; } }
 
 .project-card{
   background:linear-gradient(160deg, var(--bg-elev), var(--bg));
@@ -624,7 +623,6 @@ footer .copyright{
   <section class="hero" id="top">
     <div class="wrap">
       <div class="hero-copy">
-        <p class="eyebrow">$ whoami</p>
         <h1>Sopar <span>Sinurat</span></h1>
         <p class="hero-role">Web Developer<span class="cursor" aria-hidden="true"></span></p>
         <p class="intro">
@@ -734,8 +732,8 @@ footer .copyright{
   <section id="projects">
     <div class="wrap">
       <p class="eyebrow">Projects</p>
-      <h2 class="section-title reveal">One real project, honestly</h2>
-      <p class="section-lede reveal">No filler case studies — this is what I've actually shipped so far.</p>
+      <h2 class="section-title reveal">Featured Work</h2>
+      <p class="section-lede reveal">Real, hands-on projects built while sharpening my craft as a developer.</p>
 
       <div class="projects-grid">
         <div class="project-card reveal">
@@ -757,11 +755,6 @@ footer .copyright{
           </div>
         </div>
 
-        <div class="project-card soon reveal">
-          <div class="plus">+</div>
-          <h3>More Projects</h3>
-          <p>Coming soon — currently learning and building.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -850,7 +843,7 @@ footer .copyright{
 <!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="wrap">
-    <p class="quote">"Every great developer starts with a single project."</p>
+    <p class="quote">"Progress, not perfection."</p>
     <p class="copyright">© 2026 Sopar Sinurat</p>
   </div>
 </footer>
